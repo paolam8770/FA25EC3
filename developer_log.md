@@ -24,3 +24,15 @@ Commit messages must also be descriptive, and the Developer Log must reflect the
 
 * started assignment, worked on constructor and initializing the root ptr to null ptr
 * first commit was today, files edited were developer\_log.md and tree.h, committed just to mark me starting the proj
+
+
+
+12/7/25
+
+* worked on creating createRoot --> handling if root is not nullptr with a return statement at the start, otherwise if it is equal to null then going through the steps
+* still only edited / worked on tree.h and filling out the dev log
+
+
+
+
+

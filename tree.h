@@ -57,19 +57,32 @@ public:
 
     // TODO: Allocate memory, assign id, assign data, set as root
     void createRoot(const string &id, const T &value) {
-        root = new Node<T>(id, value);
+        if (root != nullptr) {
+            return;
+        }
+        if (root == nullptr) {
+            root->children.push_back(new Node<T>(id, value));
+            root->id = id;
+            root->data = value;
+            root = new Node<T>(id, value);
+        }
+    };
+
+    // TODO: Find parent, create child, link parent to child
+    // TODO: Support repeated children under multiple parents
+    void addNode(const string &parentID, const string &childID, const T &value) {
 
     };
 
-    void addNode(const string &parentID, const string &childID, const T &value);
-    // TODO: Find parent, create child, link parent to child
-    // TODO: Support repeated children under multiple parents
-
-    Node<T>* findNode(const string &id);
     // TODO: Use DFS or BFS to search tree
+    Node<T>* findNode(const string &id) {
 
-    void printAll();
+    };
+
     // TODO: Print entire structure in readable form
+    void printAll() {
+
+    };
 
     ~Tree();
     // TODO: Free all allocated memory
