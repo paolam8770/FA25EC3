@@ -34,5 +34,8 @@ Commit messages must also be descriptive, and the Developer Log must reflect the
 
 
 
+12/8
 
-
+* working on find node --> kept running into issues with implementation of the dfs because i kept messing up the way to keep track of visited 
+* for visited/found i initially tried doing something similar to what we did in prog3 but it turns out i didn't need anything for visited and then for found I just needed to switch from Boolean to Node type
+* only edited and worked on tree.h and dev log

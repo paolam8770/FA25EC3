@@ -5,6 +5,7 @@
 #ifndef FA25EC3_TREE_H
 #define FA25EC3_TREE_H
 
+#include <array>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -71,13 +72,51 @@ public:
     // TODO: Find parent, create child, link parent to child
     // TODO: Support repeated children under multiple parents
     void addNode(const string &parentID, const string &childID, const T &value) {
+        if (root == nullptr) {
+            return;
+        }
+
+        Node<T> *parent = new Node<T>(parentID);
+        if (parent == nullptr) {
+            return;
+        }
+
+        Node<T> *child = findNode(childID);
+        if (child == nullptr) {
+            child = new Node<T>(childID, value);
+        }
+        parent->children.push_back(child);
+
 
     };
 
     // TODO: Use DFS or BFS to search tree
     Node<T>* findNode(const string &id) {
+        Node<T>* curr = root;
+            if (curr == nullptr) {
+                return nullptr;
+            }
+            if (curr->id == id) { //reached goal so returns true
+                return curr;
+            }
 
-    };
+
+            for (int i = 0; i < curr->children.size(); i++) { // loop to compute next row and col
+                        //resetting the currs
+                        Node<T>* currChild = curr->children[i];
+
+                        // if true getting assigned and calling dfs
+                        Node<T>*found  = findNode(currChild, id); // recursive call
+                        if (found != nullptr) {
+                            return found;
+                        }
+            }
+
+            return nullptr;
+        }
+
+
+
 
     // TODO: Print entire structure in readable form
     void printAll() {
