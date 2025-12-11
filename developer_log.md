@@ -39,3 +39,26 @@ Commit messages must also be descriptive, and the Developer Log must reflect the
 * working on find node --> kept running into issues with implementation of the dfs because i kept messing up the way to keep track of visited 
 * for visited/found i initially tried doing something similar to what we did in prog3 but it turns out i didn't need anything for visited and then for found I just needed to switch from Boolean to Node type
 * only edited and worked on tree.h and dev log
+
+
+
+12/9
+
+* started working through bugs in tree (had issues in create root - was overcomplicating)
+* added comments to addnode 
+* completed allocating tree memory and printall (created a print helper func for printall)
+
+
+
+12/10
+
+* uncommented items from main
+* implemented playGame
+* added comments
+* started debugging --> reworked addNode and Print, and created helper functions to fix error i was running into 
+* final commit 
+
+
+
+
+
